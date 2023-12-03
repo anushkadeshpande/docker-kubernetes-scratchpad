@@ -119,3 +119,7 @@ Kiali dashboard:
 
 ![image](https://github.com/anushkadeshpande/docker-kubernetes/assets/53345232/546246a6-cc7d-4c57-ab48-a9476c60f4d0)
 
+
+
+
+* We need to have an ```app``` label in Deployments and Services for visualization to work
