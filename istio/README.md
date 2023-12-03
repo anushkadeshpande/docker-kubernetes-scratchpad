@@ -102,3 +102,20 @@ shippingservice-7c4954996f-kldcb         2/2     Running   0          2m24s
 This init container is injected in each of the pods
 
 ![image](https://github.com/anushkadeshpande/docker-kubernetes/assets/53345232/97299343-bad1-4491-bbcd-aedaacda65dc)
+
+### Visualization using kiali:
+
+We need to apply ```kiali.yaml``` and ```prometheus.yaml``` in order to see the visualization on Kiali
+
+Once kiali and prometheus pods are up in the ```istio-system``` namespace, we need to access the kiali dashboard.
+
+```
+kubectl port-forward svc/kiali -n istio-system 20001
+```
+
+And then the kiali dashboard can be accessed at ```127.0.0.1:20001```
+
+Kiali dashboard:
+
+![image](https://github.com/anushkadeshpande/docker-kubernetes/assets/53345232/546246a6-cc7d-4c57-ab48-a9476c60f4d0)
+
