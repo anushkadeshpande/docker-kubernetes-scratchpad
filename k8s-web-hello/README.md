@@ -14,6 +14,9 @@ k8s-web-hello   ClusterIP   10.111.153.230   <none>        3000/TCP   25s
 #### Scaling deployment:
 ```kubectl scale deploy k8s-web-hello --replicas=4```
 
+##### Scaling all deployments at once:
+```kubectl scale deploy --replicas=0 --all```
+
 
 ## Creating NodePort service:
 ```kubectl expose deploy k8s-web-hello --type=NodePort --port=3000```
