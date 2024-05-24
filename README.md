@@ -7,7 +7,7 @@
   - [etcd](#etcd)
   - [kube-scheduler](#kube-scheduler)
   - [kubelet](#kubelet)
-  - [container runtime interface](##container-runtime-interface-cri)
+  - [Container Runtime Interface (CRI)](##container-runtime-interface-cri)
 - [Kubernetes Commands](#kubernetes-commands) 
 - [Docker Commands](#docker-commands)
 
