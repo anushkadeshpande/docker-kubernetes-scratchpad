@@ -6,8 +6,10 @@
   - [kubectl](#kubectl)
   - [etcd](#etcd)
   - [kube-scheduler](#kube-scheduler)
+  - [controller-manager](#controller-manager)
   - [kubelet](#kubelet)
   - [Container Runtime Interface (CRI)](##container-runtime-interface-cri)
+  - [kube-proxy](#kube-proxy)
 - [Kubernetes Commands](#kubernetes-commands) 
 - [Docker Commands](#docker-commands)
 
@@ -33,6 +35,11 @@
 - Responsible for scheduling pods on available nodes.
 - Evaluates the resource requirements of each pod and matches them with the available resources in the cluster.
 
+#### controller-manager:
+- Makes sure the cluster is in the desired state.
+- Responsible to bring up any pod that goes down
+- Runs different controller processes ex node-controller (manages a node)
+
 #### kubelet:
 - An agent that runs on each node in the cluster.
 - Ensures that containers are running in a pod.
@@ -43,6 +50,10 @@
 #### Container Runtime Interface (CRI):
 - Examples of container runtimes include Docker, containerd, and CRI-O.
 - Responsible for pulling images, starting, and stopping containers, and managing container storage and networking.
+
+#### kube-proxy:
+- Manages network rules
+- Allows communication with the pod inside and outside of a kubernetes cluster
 
 
 <hr>
