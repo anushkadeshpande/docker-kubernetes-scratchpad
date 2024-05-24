@@ -1,5 +1,16 @@
 # Kubernetes:
 
+## Index:
+- [Components](#components)
+  - [kube-apiserver](#kube-apiserver)
+  - [kubectl](#kubectl)
+  - [etcd](#etcd)
+  - [kube-scheduler](#kube-scheduler)
+  - [kubelet](#kubelet)
+  - [container runtime interface](#cri)
+- [Kubernetes Commands](#kubernetes-commands) 
+- [Docker Commands](#docker-commands)
+
 ## Components:
 
 #### kube-apiserver:
@@ -10,6 +21,8 @@
 #### kubectl:
 - Command-line tool used to interact with the Kubernetes cluster.
 - Communicates with kube-apiserver to retrieve necessary data or execute commands.
+- Uses curl under the hood to sent requests to Kubernetes API
+- The context used by kubectl is stored in `~/.kube/config`
 
 #### etcd:
 - A distributed key-value store used to store all cluster data.
@@ -30,3 +43,39 @@
 #### Container Runtime Interface (CRI):
 - Examples of container runtimes include Docker, containerd, and CRI-O.
 - Responsible for pulling images, starting, and stopping containers, and managing container storage and networking.
+
+<hr>
+## Kubernetes Commands:
+
+#### To get kubeconfig
+```
+kubectl config view
+```
+
+#### To get pods
+```
+kubectl get po -n <namespace>
+```
+To get all pods from all namespaces:
+```
+kubectl get po -A
+```
+
+#### To change context of kubectl
+```
+kubectl config set-context --current -namespace={ns}
+```
+
+#### To get info about any k8s component
+```
+kubectl explain <component-name>
+```
+
+<hr>
+
+## Docker Commands:
+
+#### To save an image to a tar file:
+```
+docker save <image-name>
+```
