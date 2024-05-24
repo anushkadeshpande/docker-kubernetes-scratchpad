@@ -7,7 +7,7 @@
   - [etcd](#etcd)
   - [kube-scheduler](#kube-scheduler)
   - [kubelet](#kubelet)
-  - [container runtime interface](#cri)
+  - [container runtime interface](#container-runtime-interface)
 - [Kubernetes Commands](#kubernetes-commands) 
 - [Docker Commands](#docker-commands)
 
@@ -44,7 +44,9 @@
 - Examples of container runtimes include Docker, containerd, and CRI-O.
 - Responsible for pulling images, starting, and stopping containers, and managing container storage and networking.
 
+
 <hr>
+
 ## Kubernetes Commands:
 
 #### To get kubeconfig
