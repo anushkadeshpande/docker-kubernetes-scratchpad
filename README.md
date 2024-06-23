@@ -92,3 +92,9 @@ kubectl explain <component-name>
 ```
 docker save <image-name>
 ```
+
+
+#### To copy files from a docker container:
+```
+docker cp <containerId>:/file/path/within/container /host/path/target
+```
