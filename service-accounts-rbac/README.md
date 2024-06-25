@@ -95,6 +95,7 @@ Each service account can belong to one or more groups and these groups are used 
 ```
 
 <hr>
+
 # RBAC
 
 Access to Kubernetes resources is configured via:
