@@ -111,3 +111,54 @@ It is defined on namespace level and the rules apply only on that namespace <br>
 
 #### Clusterrole
 Applies permissions on a cluster level
+
+
+### Defining a new role
+
+A role can be defined as:
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: test
+  name: pod-reader
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["list"]
+
+```
+
+To actually grant the permissions defined in this role, a role binding is required
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pods
+  namespace: test
+subjects:
+  - kind: ServiceAccount
+    name: pod-reader-sa
+    namespace: test
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
+
+It binds a role to a user, in this case, a service account <br>
+We can have multiple subjects.
+
+A service account can be created using the ServiceAccount manifest:
+
+```
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: pod-reader-sa
+```
+
+> Use this command to get all available commands for a resource type <br>
+> ```kubectl api-resources -o wide```
