@@ -93,6 +93,11 @@ kubectl explain <component-name>
 docker save <image-name>
 ```
 
+#### To rename a container
+```
+docker container rename <container-id> <new-name>
+```
+
 
 #### To copy files from a docker container:
 ```
